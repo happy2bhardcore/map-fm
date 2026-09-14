@@ -1,1 +1,52 @@
 /* css styles */
+@keyframes slideDownIn {
+  0% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#title-block-header, .quarto-title, .title, header.quarto-title-block {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+}
+
+#title-block-header {
+  animation: slideDownIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-height: 150px;
+  transition: opacity 0.8s ease, max-height 0.8s ease, margin 0.8s ease, padding 0.8s ease;
+  overflow: hidden;
+}
+
+.search-bar-container {
+  animation: slideDownIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+  max-height: 100px;
+  transition: opacity 0.8s ease, max-height 0.8s ease, margin 0.8s ease, padding 0.8s ease;
+  overflow: hidden;
+}
+
+body.has-chart #title-block-header {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  pointer-events: none;
+}
+
+body.has-chart .search-bar-container {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  pointer-events: none;
+}
